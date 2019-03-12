@@ -2,7 +2,51 @@ use std::fmt;
 
 // Rust has to have a main function
 fn main() {
+    // Define a structure which `fmt::Display` will be implemented for. This is simply
+    // a tuple struct containing an `i32` bound to the name `Structure`.
+    // This won't print by default, as the 'print method' needs to be defined, similar to the
+    // __str__ magic method of python.
+    #[allow(dead_code)]
+    struct Structure(i32);
+    impl fmt::Display for Structure {
+        // This trait requires `fmt` with this exact signature.
+        fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+            write!(f, "{}", self.0)
+        }
+    }
+    struct MinMax(i32, i32);
+    impl fmt::Display for MinMax {
+        fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+            write!(f, "Min: {0}  Max: {1}", self.0, self.1)
+        }
+    }
+    let minmax = MinMax(5, 12);
+    println!("{}", minmax);
+    //let test = Structure(45);
+    //println!("{}", test);
 
+    #[derive(Debug)]
+    struct Point2d {
+        x: f64,
+        y: f64
+        //Interestingly delimiter required on the last entry
+    }
+    let newpoint = Point2d{x: 21.4, y: 48.3};
+    impl fmt::Display for Point2d {
+        fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+            write!(f, "x: {} y: {}", self.x, self.y)
+        }
+    }
+    println!("{}", newpoint);
+}
+
+//In functions, the compiler will not infer types
+fn sqr(x: f64) -> f64 {
+    return x * x;
+}
+
+#[allow(dead_code)]
+fn archive() {
     let answer :i32 = 43;
     println!("Hello {}", answer);
     assert_eq!(answer, 43);
@@ -39,28 +83,4 @@ fn main() {
     let res :f64 = sqr(2.87f64);
     println!("{}", res);
 
-    // Define a structure which `fmt::Display` will be implemented for. This is simply
-    // a tuple struct containing an `i32` bound to the name `Structure`.
-    struct Structure(i32);
-
-    // In order to use the `{}` marker, the trait `fmt::Display` must be implemented
-    // manually for the type.
-    impl fmt::Display for Structure {
-        // This trait requires `fmt` with this exact signature.
-        fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-            // Write strictly the first element into the supplied output
-            // stream: `f`. Returns `fmt::Result` which indicates whether the
-            // operation succeeded or failed. Note that `write!` uses syntax which
-            // is very similar to `println!`.
-            write!(f, "{}", self.0)
-        }
-    }
-    let test = Structure(45);
-    println!("{}", test);
-
-}
-
-//In functions, the compiler will not infer types
-fn sqr(x: f64) -> f64 {
-    return x * x;
 }
