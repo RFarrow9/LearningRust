@@ -1,3 +1,5 @@
+use std::fmt;
+
 // Rust has to have a main function
 fn main() {
 
@@ -17,7 +19,7 @@ fn main() {
         }
     }
     for i in 0..5 {
-        let even_odd = if i % 2 == 0 {"even"} else {"odd"};
+        let even_odd :&str = if i % 2 == 0 {"even"} else {"odd"};
         println!("{} {}", even_odd, i);
     }
     println!("test {} {}", 1, 1);
@@ -36,6 +38,25 @@ fn main() {
 
     let res :f64 = sqr(2.87f64);
     println!("{}", res);
+
+    // Define a structure which `fmt::Display` will be implemented for. This is simply
+    // a tuple struct containing an `i32` bound to the name `Structure`.
+    struct Structure(i32);
+
+    // In order to use the `{}` marker, the trait `fmt::Display` must be implemented
+    // manually for the type.
+    impl fmt::Display for Structure {
+        // This trait requires `fmt` with this exact signature.
+        fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+            // Write strictly the first element into the supplied output
+            // stream: `f`. Returns `fmt::Result` which indicates whether the
+            // operation succeeded or failed. Note that `write!` uses syntax which
+            // is very similar to `println!`.
+            write!(f, "{}", self.0)
+        }
+    }
+    let test = Structure(45);
+    println!("{}", test);
 
 }
 
