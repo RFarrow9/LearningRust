@@ -99,6 +99,7 @@ fn main() {
         Colour {red: 1, green: 255, blue: 125},
         Colour {red: 95, green: 47, blue: 255},
     ].iter() {println!("{}", colour);}
+    let test :u8 = 484;
 }
 
 //In functions, the compiler will not infer types
