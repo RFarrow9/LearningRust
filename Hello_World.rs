@@ -1,4 +1,4 @@
-use std::fmt;
+use std::fmt::{self, Formatter, Display};
 
 // Rust has to have a main function
 fn main() {
@@ -38,6 +38,67 @@ fn main() {
         }
     }
     println!("{}", newpoint);
+    println!("");
+    //write!(f, "{}", value)?;
+
+    struct List(Vec<i32>);
+
+    impl fmt::Display for List {
+        fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+            let vec = &self.0;
+            write!(f, "[")?;
+            //Iterate over vec in v while enumerating the iteration
+            //count in 'count'
+            for (count, v) in vec.iter().enumerate() {
+                // Use the ? operator, or try!(deprecated) to return errors
+                if count != 0 {write!(f, ", ")?;}
+                write!(f, "{}", v)?;
+            }
+            //Close the opened bracket and return the fmt::result
+            write!(f, "]")
+        }
+    }
+
+    let m = List(vec![1, 2, 24]);
+    println!("{}", m);
+    let foo :i64 = 3735928559;
+    println!("{}", format!("{}", foo));
+    println!("{}", format!("0x{:X}", foo));
+    println!("{}", format!("0o{:o}", foo));
+    struct City {
+        name: &'static str,
+        lat: f32,
+        lon: f32,
+    }
+    impl Display for City{
+        fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+            let lat_c = if self.lat >= 0.0 {'N'} else {'S'};
+            let lon_c = if self.lon >= 0.0 {'E'} else {'W'};
+            write!(f, "{}: {:.3}°{} {:.3}°{}", self.name, self.lat.abs(), lat_c, self.lon.abs(), lon_c)
+        }
+    }
+    for city in [
+        City {name: "Dublin", lat: 53.347778, lon: -6.259722},
+        City {name: "Oslo", lat: 59.95, lon: 10.75},
+        City {name: "Vancouver", lat: 49.25, lon: -123.1},
+        ].iter() {println!("{}", city);}
+
+    #[derive(Debug)]
+    struct Colour {
+        red: u8,
+        green: u8,
+        blue: u8,
+    }
+    impl Display for Colour {
+        fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+            write!(f, "RGB:({},{},{})", self.red, self.green, self.blue)
+        }
+    }
+    for colour in [
+        Colour {red: 43, green: 58, blue: 12},
+        Colour {red: 1, green: 255, blue: 125},
+        Colour {red: 95, green: 47, blue: 255},
+    ].iter() {println!("{}", colour);}
 }
 
 //In functions, the compiler will not infer types
