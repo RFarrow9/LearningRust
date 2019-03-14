@@ -99,7 +99,21 @@ fn main() {
         Colour {red: 1, green: 255, blue: 125},
         Colour {red: 95, green: 47, blue: 255},
     ].iter() {println!("{}", colour);}
-    let test :u8 = 484;
+    let _test :u8 = 232;
+        //explicit
+    let _logical:bool = true;
+        //inferred
+    let _logical2 = true;
+    //regular and suffic annotation
+    let a_float: f64 = 1.2;
+    let _integer = 5i32;
+
+    let mut mutable = 12;
+    //Will error as variable types cannot be changed
+    //mutable = true;
+    //But can be overwritten with shadowing
+    let mutable:bool = true;
+
 }
 
 //In functions, the compiler will not infer types
