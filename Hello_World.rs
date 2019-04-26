@@ -1,4 +1,4 @@
-use std::fmt::{self, Formatter, Display};
+/use std::fmt::{self, Formatter, Display};
 
 // Rust has to have a main function
 fn main() {
