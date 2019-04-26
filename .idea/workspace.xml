@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c140b0f6-3a88-49df-bd54-2521b95a9132" name="Default Changelist" comment="" />
+    <list default="true" id="c140b0f6-3a88-49df-bd54-2521b95a9132" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hello_World.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hello_World.rs" beforeDir="false" afterPath="$PROJECT_DIR$/Hello_World.rs" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Hello_World.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+            <state relative-caret-position="300">
+              <caret line="140" column="19" lean-forward="true" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -42,18 +46,16 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="1592" />
     <option name="y" value="-8" />
     <option name="width" value="1616" />
-    <option name="height" value="876" />
+    <option name="height" value="916" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -61,19 +63,16 @@
               <item name="LearningRust" type="b2602c69:ProjectViewProjectNode" />
               <item name="LearningRust" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="LearningRust" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LearningRust" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552409706158" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554387242607" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
   </component>
@@ -100,11 +99,6 @@
       <envs />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Cargo Command.Run LearningRust" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -120,10 +114,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="1592" y="-8" width="1616" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22493573" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26156813" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -169,8 +163,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Hello_World.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        <state relative-caret-position="300">
+          <caret line="140" column="19" lean-forward="true" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
         </state>
       </provider>
     </entry>
